@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'users#index'
   get '/users/new' => 'users#new'
   post '/users' => 'users#create'
-  post '/users/destroy' => 'users#destroy'
+  post '/users/destroy/:id' => 'users#destroy', as: :delete_user
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
