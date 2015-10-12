@@ -3,8 +3,14 @@
 = form_for(@user) do |f|
 	= f.label 'Aventurier :'
 	= f.text_field :nickname
+	= f.label 'Mot de passe :'
+	= f.text_field :password
+	= f.label 'Confirme mot de passe :'
+	= f.text_field :password
 	= f.label 'Niveau :'
 	= f.text_field :level
 	= f.label 'Butin :'
 	= f.text_field :loot
 	= f.submit 'Ajouter'
+
+= button_to "Annuler", root_path, :method => :get
