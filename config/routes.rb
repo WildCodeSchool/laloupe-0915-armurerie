@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get '/users/new' => 'users#new'
   post '/users' => 'users#create'
   post '/users/destroy/:id' => 'users#destroy', as: :delete_user
-
+  get '/users/edit/:id' => 'users#edit', as: :edit_user
+  post '/users/update/:id' => 'users#update', as: :update_user
+  resources :users
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
