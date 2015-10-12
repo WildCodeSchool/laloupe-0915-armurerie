@@ -23,6 +23,6 @@
 					= link_to "Modif."
 				%td
 					/ %img{:class => 'deleteButton'}
-					= link_to "Suppr.", delete_user_path(u), :method => :post
+					= link_to "Suppr.", delete_user_path(u), :method => :post, data: { confirm: 'Voulez vous vraiment supprimer l\'aventurier ?' }
 
 = button_to "Ajouter un aventurier", users_new_path, :method => :get
