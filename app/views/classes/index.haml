@@ -1,0 +1,22 @@
+%h1 Liste des classes
+
+%table
+	%thead
+		%tr
+			%th
+				Nom des classes
+			
+			%th{:colspan => '2'}
+
+	%tbody
+		- @classes.each do |c|
+			%tr
+				%td
+					= c.name
+				%td
+					= link_to "Suppr.", delete_classe_path(c), :method => :post, data: { confirm: 'Voulez vous vraiment supprimer cette classe?' }
+
+
+= button_to "Créer des classes", classes_new_path, :method => :get
+
+=button_to "Supprimer", classes_index_path, :method => :get

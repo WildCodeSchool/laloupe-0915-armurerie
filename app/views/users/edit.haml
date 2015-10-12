@@ -1,0 +1,10 @@
+%h1 Modification de l'aventurier #{@user.nickname} :
+
+= form_for(@user) do |f|
+	= f.label 'Aventurier :'
+	= f.text_field :nickname
+	= f.label 'Niveau :'
+	= f.text_field :level
+	= f.label 'Butin :'
+	= f.text_field :loot
+	= f.submit 'Modifier'

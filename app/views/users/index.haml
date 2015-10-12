@@ -9,6 +9,7 @@
 				Niveau
 			%th
 				Butin
+			%th{:colspan => '2'}
 
 	%tbody
 		- @users.each do |u|
@@ -20,9 +21,10 @@
 				%td
 					= u.loot
 				%td
-					= link_to "Modif."
+					= link_to "Modif.", edit_user_path(u), :method => :get
 				%td
-					/ %img{:class => 'deleteButton'}
 					= link_to "Suppr.", delete_user_path(u), :method => :post, data: { confirm: 'Voulez vous vraiment supprimer l\'aventurier ?' }
 
 = button_to "Ajouter un aventurier", users_new_path, :method => :get
+
+= button_to "Les classes", classes_index_path, :method => :get 
