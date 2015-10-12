@@ -1,26 +1,28 @@
 %h1 Liste des aventuriers
 
 %table
-	%th
-		%td
-			Nom des aventuriers
-		%td
-			Niveau
-		%td
-			Butin
-
-	- @users.each do |u|
+	%thead
 		%tr
-			%td
-				= u.nickname
-			%td
-				= u.level
-			%td
-				= u.loot
-			%td
-				= link_to "Modif."
-			%td
-				/ %img{:class => 'deleteButton'}
-				= link_to "Suppr.", users_destroy_path(u), :method => :post
+			%th
+				Nom des aventuriers
+			%th
+				Niveau
+			%th
+				Butin
+
+	%tbody
+		- @users.each do |u|
+			%tr
+				%td
+					= u.nickname
+				%td
+					= u.level
+				%td
+					= u.loot
+				%td
+					= link_to "Modif."
+				%td
+					/ %img{:class => 'deleteButton'}
+					= link_to "Suppr.", delete_user_path(u), :method => :post
 
 = button_to "Ajouter un aventurier", users_new_path, :method => :get
