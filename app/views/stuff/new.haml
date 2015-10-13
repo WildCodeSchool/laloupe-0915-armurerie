@@ -1,0 +1,33 @@
+%h1 Page de création d'un élément
+
+= form_for(@stuff) do |f|
+	= f.label 'Nom :'
+	= f.text_field :name
+	%br
+	%br
+	= f.label 'Type :'
+	= f.text_field :type
+	%br
+	%br
+	= f.label 'Matière :'
+	= f.text_field :matiere
+	%br
+	%br
+	= f.label 'Emplacement :'
+	= f.text_field :emplacement
+	%br
+	%br
+	= f.label 'Prix :'
+	= f.text_field :prix
+	%br
+	%br
+	= f.label 'Niveau :'
+	= f.text_field :niveau
+	%br
+	%br
+	= f.label 'Bonus :'
+	= f.text_field :bonus
+	%br
+	%br
+	= f.submit 'Ajouter'
+
