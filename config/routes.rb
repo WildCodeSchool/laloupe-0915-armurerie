@@ -10,7 +10,14 @@ Rails.application.routes.draw do
   get '/users/edit/:id' => 'users#edit', as: :edit_user
   post '/users/update/:id' => 'users#update', as: :update_user
   resources :users
-  
+
+  get '/classes/index' => 'classes#index'
+  get '/classes/new' => 'classes#new'
+  post '/classes' => 'classes#create'
+  post '/classes/destroy/:id' => 'classes#destroy', as: :delete_classe
+  get '/classes/edit/:id' => 'classes#edit', as: :edit_classe
+  post '/classes/update/:id' => 'classes#update', as: :update_classe
+  resources :classes
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,0 +1,6 @@
+%h1 Ajout d'une classe
+
+= form_for(@classe) do |f|
+	= f.label 'Nom de classe :'
+	= f.text_field :name
+	= f.submit 'Ajouter'
