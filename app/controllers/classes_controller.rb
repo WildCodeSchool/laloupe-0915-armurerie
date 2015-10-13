@@ -17,6 +17,20 @@ class ClassesController < ApplicationController
 		end
 	end
 
+	def edit
+		@classe = Classe.find(params[:id])
+	end
+
+	def update
+		@classe = Classe.find(params[:id])
+
+		if @classe.update(classe_param)
+			redirect_to classes_index_path
+		else
+			render 'edit'
+		end
+	end
+
 	def destroy
 		@classe = Classe.find(params[:id])
 		@classe.destroy
