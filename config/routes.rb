@@ -21,9 +21,12 @@ Rails.application.routes.draw do
   post '/classes/update/:id' => 'classes#update', as: :update_classe
   resources :classes
 
-  get 'equipments/index'
+  get 'equipments/index' => 'equipments#index'
   get 'equipments/new' => 'equipment#new'
   post '/equipments' => 'equipment#create'
+  post '/equipments/destroy/:id' => 'equipments#destroy', as: :delete_equipment
+  get '/equipments/edit/:id' => 'equipments#edit', as: :edit_equipment
+  post '/equipments/update/:id' => 'equipments#update', as: :update_equipment
   resources :equipments
   
   # Example of regular route:
