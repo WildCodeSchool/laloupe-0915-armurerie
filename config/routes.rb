@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   post '/users/update/:id' => 'users#update', as: :update_user
   resources :users
 
+
   get '/classes/index' => 'classes#index'
   get '/classes/new' => 'classes#new'
   post '/classes' => 'classes#create'
@@ -18,6 +20,12 @@ Rails.application.routes.draw do
   get '/classes/edit/:id' => 'classes#edit', as: :edit_classe
   post '/classes/update/:id' => 'classes#update', as: :update_classe
   resources :classes
+
+  get 'equipments/index'
+  get 'equipments/new' => 'stuff#new'
+  post '/equipments' => 'stuff#create'
+  resources :equipments
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

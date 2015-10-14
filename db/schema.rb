@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151013074726) do
 
   create_table "class_names", force: :cascade do |t|
@@ -23,6 +24,20 @@ ActiveRecord::Schema.define(version: 20151013074726) do
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+=======
+ActiveRecord::Schema.define(version: 20151014080714) do
+
+  create_table "equipment", force: :cascade do |t|
+    t.string   "name",                   null: false
+    t.string   "item",                   null: false
+    t.string   "location",               null: false
+    t.string   "material",               null: false
+    t.integer  "level",      default: 1, null: false
+    t.integer  "price",      default: 0, null: false
+    t.string   "bonus"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+>>>>>>> origin/Equipements
   end
 
   create_table "users", force: :cascade do |t|
