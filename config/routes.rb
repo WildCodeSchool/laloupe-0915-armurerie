@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   post '/users/update/:id' => 'users#update', as: :update_user
   resources :users
 
-  get 'stuff/index'
-  get 'stuff/new' => 'stuff#new'
-  post '/stuffs' => 'stuff#create'
-  resources :stuffs
+  get 'equipments/index'
+  get 'equipments/new' => 'stuff#new'
+  post '/equipments' => 'stuff#create'
+  resources :equipments
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
