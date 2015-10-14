@@ -6,28 +6,28 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#index'
   get '/users/new' => 'users#new'
-  post '/users' => 'users#create'
+  # post '/users' => 'users#create'
   post '/users/destroy/:id' => 'users#destroy', as: :delete_user
   get '/users/edit/:id' => 'users#edit', as: :edit_user
-  post '/users/update/:id' => 'users#update', as: :update_user
-  resources :users
+  # post '/users/update/:id' => 'users#update', as: :update_user
+  # resources :users
 
 
-  get '/classes/index' => 'classes#index'
-  get '/classes/new' => 'classes#new'
-  post '/classes' => 'classes#create'
-  post '/classes/destroy/:id' => 'classes#destroy', as: :delete_classe
-  get '/classes/edit/:id' => 'classes#edit', as: :edit_classe
-  post '/classes/update/:id' => 'classes#update', as: :update_classe
-  resources :classes
+  get '/classes' => 'classes#index'
+  # get '/classes/new' => 'classes#new'
+  # post '/classes' => 'classes#create'
+  # post '/classes/destroy/:id' => 'classes#destroy', as: :delete_classe
+  # get '/classes/edit/:id' => 'classes#edit', as: :edit_classe
+  # post '/classes/update/:id' => 'classes#update', as: :update_classe
 
-  get 'equipments/index' => 'equipments#index'
-  get 'equipments/new' => 'equipment#new'
-  post '/equipments' => 'equipment#create'
-  post '/equipments/destroy/:id' => 'equipments#destroy', as: :delete_equipment
-  get '/equipments/edit/:id' => 'equipments#edit', as: :edit_equipment
-  post '/equipments/update/:id' => 'equipments#update', as: :update_equipment
-  resources :equipments
+
+  get '/equipments' => 'equipments#index'
+  get '/equipments/new' => 'equipments#new'
+  post '/equipments' => 'equipments#create', as: :equipment_index
+  # post '/equipments/destroy/:id' => 'equipments#destroy', as: :delete_equipment
+  # get '/equipments/edit/:id' => 'equipments#edit', as: :edit_equipment
+  # post '/equipments/update/:id' => 'equipments#update', as: :update_equipment
+
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

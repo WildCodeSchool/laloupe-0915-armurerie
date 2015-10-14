@@ -1,8 +1,8 @@
 %h1 Ajout d'un aventurier
 
-= form_for(@equipment) do url: equipments_path, method: :patch  |f|
+= form_for(@yolo) do |f|
 	= f.label 'Nom :'
-	= f.text_field :name
+	= f.text_field :name 
 	= f.label 'Item :'
 	= f.text_field :item
 	= f.label 'Emplacement :'
