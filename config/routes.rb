@@ -22,8 +22,8 @@ Rails.application.routes.draw do
   resources :classes
 
   get 'equipments/index'
-  get 'equipments/new' => 'stuff#new'
-  post '/equipments' => 'stuff#create'
+  get 'equipments/new' => 'equipment#new'
+  post '/equipments' => 'equipment#create'
   resources :equipments
   
   # Example of regular route:
