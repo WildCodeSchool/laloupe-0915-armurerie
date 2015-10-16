@@ -1,0 +1,20 @@
+%h1 Ajout d'un aventurier
+
+= form_for(@user) do |f|
+	= f.label 'Nom :'
+	= f.text_field :name 
+	= f.label 'Item :'
+	= f.text_field :item
+	= f.label 'Emplacement :'
+	= f.text_field :location
+	= f.label 'Matière :'
+	= f.text_field :material
+	= f.label 'Prix :'
+	= f.text_field :price
+	= f.label 'Niveau :'
+	= f.text_field :level
+	= f.label 'Bonus :'
+	= f.text_field :bonus
+	= f.submit 'Ajouter'
+
+= button_to "Retour", equipments_index_path, :method => :get

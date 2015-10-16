@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   post '/users/update/:id' => 'users#update', as: :update_user
   resources :users
 
-
   get '/classes/index' => 'classes#index'
   get '/classes/new' => 'classes#new'
   post '/classes' => 'classes#create'
