@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Armurerie</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>Armurerie</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
 
-<%= button_to "Home", root_path, :method => :get %>
-<%= button_to "Aventuriers", users_path, :method => :get %>
-<%= button_to "Classes", classes_path, :method => :get %>
-<%= button_to "Equipements", equipments_path, :method => :get %>
+		<header class="navbar navbar-default">
+			<div class="collapse navbar-collapse">
+		    <div class="container">
+		      <nav>
+		        <ul class="nav navbar-nav">
+		          <li><%= link_to "Home", root_path %></li>
+		          <li><%= link_to "Aventuriers", users_path %></li>
+		          <li><%= link_to "Classes", classes_path %></li>
+		          <li><%= link_to "Equipements", equipments_path %></li>
+		        </ul>
+		      </nav>
+		    </div>
+			</div>
+		</header>
 
-<%= yield %>
 
-</body>
+	<%= yield %>
+
+	</body>
 </html>
