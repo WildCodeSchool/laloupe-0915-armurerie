@@ -1,7 +1,7 @@
 class EquipmentsController < ApplicationController
 
-def index
-		@equipment = Equipment.all
+	def index
+		@equipments = Equipment.all
 	end
 
 	def new
@@ -9,17 +9,40 @@ def index
 	end
 
 	def create
-		@equipment = Equipment.new(equip_param)
+		@equipment = Equipment.new(equipment_param)
 		if @equipment.save
-			redirect_to root_path
+			redirect_to equipments_path
 		else
 			render 'new'
 		end
 	end
 
+
+	def edit
+		@equipment = Equipment.find(params[:id])
+	end
+
+	def update
+		@equipment = Equipment.find(params[:id])
+
+		if @equipment.update(equipment_param)
+			redirect_to equipments_path
+		else
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@equipment = Equipment.find(params[:id])
+		@equipment.destroy
+
+		redirect_to equipments_path
+	end
+
+
 	private
 
-	def user_param
+	def equipment_param
 		params.require(:equipment).permit(:name, :item, :location, :price, :level, :bonus, :material)
 	end
 

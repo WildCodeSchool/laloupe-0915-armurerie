@@ -10,7 +10,6 @@
 			%th
 				Butin
 			%th{:colspan => '2'}
-
 	%tbody
 		- @users.each do |u|
 			%tr
@@ -23,10 +22,10 @@
 				%td
 					= link_to "Modif.", edit_user_path(u), :method => :get
 				%td
-					= link_to "Suppr.", delete_user_path(u), :method => :post, data: { confirm: 'Voulez vous vraiment supprimer l\'aventurier ?' }
+					= link_to "Suppr.", user_path(u), :method => :delete, data: { confirm: 'Voulez vous vraiment supprimer l\'aventurier ?' }
 
-= button_to "Ajouter un aventurier", users_new_path, :method => :get
+= button_to "Ajouter un aventurier", new_user_path, :method => :get
 
-= button_to "Les classes", classes_index_path, :method => :get 
+= button_to "Les classes", classes_path, :method => :get 
 
-= button_to "Les éléments", equipments_index_path, :method => :get
+= button_to "Les éléments", equipments_path, :method => :get

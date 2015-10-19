@@ -11,4 +11,33 @@
 				Matiere	
 			%th
 				Emplacement
+			%th
+				Prix
+			%th
+				Niveau
+			%th
+				Bonus	
 			%th{:colspan => '2'}
+	%tbody
+		- @equipments.each do |e|
+			%tr
+				%td
+					= e.name
+				%td
+					= e.item
+				%td
+					= e.material
+				%td
+					= e.location
+				%td
+					= e.price
+				%td
+					= e.level
+				%td
+					= e.bonus
+				%td
+					= link_to "Modif.", edit_equipment_path(e), :method => :get
+				%td
+					= link_to "Suppr.", equipment_path(e), :method => :delete, data: { confirm: 'Voulez vous vraiment supprimer l\'élément ?' }
+
+= button_to "Ajouter un élément", new_equipment_path, :method => :get

@@ -5,25 +5,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'users#index'
-  get '/users/new' => 'users#new'
-  post '/users' => 'users#create'
-  post '/users/destroy/:id' => 'users#destroy', as: :delete_user
-  get '/users/edit/:id' => 'users#edit', as: :edit_user
-  post '/users/update/:id' => 'users#update', as: :update_user
+
   resources :users
-
-
-  get '/classes/index' => 'classes#index'
-  get '/classes/new' => 'classes#new'
-  post '/classes' => 'classes#create'
-  post '/classes/destroy/:id' => 'classes#destroy', as: :delete_classe
-  get '/classes/edit/:id' => 'classes#edit', as: :edit_classe
-  post '/classes/update/:id' => 'classes#update', as: :update_classe
   resources :classes
-
-  get 'equipments/index'
-  get 'equipments/new' => 'equipment#new'
-  post '/equipments' => 'equipment#create'
+  post '/equipments' => 'equipments#create', as: :equipment_index # POURQUOI ????
   resources :equipments
   
   # Example of regular route:

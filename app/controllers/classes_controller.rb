@@ -11,7 +11,7 @@ class ClassesController < ApplicationController
 	def create
 		@classe = Classe.new(classe_param)
 		if @classe.save
-			redirect_to classes_index_path
+			redirect_to classes_path
 		else
 			render 'new'
 		end
@@ -25,7 +25,7 @@ class ClassesController < ApplicationController
 		@classe = Classe.find(params[:id])
 
 		if @classe.update(classe_param)
-			redirect_to classes_index_path
+			redirect_to classes_path
 		else
 			render 'edit'
 		end
@@ -35,7 +35,7 @@ class ClassesController < ApplicationController
 		@classe = Classe.find(params[:id])
 		@classe.destroy
 
-		redirect_to classes_index_path
+		redirect_to classes_path
 	end
 
 	private
