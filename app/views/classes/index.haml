@@ -15,12 +15,10 @@
 					= c.name
 
 				%td
-					= link_to "Modif.", edit_classe_path(c), :method => :get
+					= link_to "Modif.", edit_class_path(c), :method => :get
 
 				%td
-					= link_to "Suppr.", delete_classe_path(c), :method => :post, data: { confirm: 'Voulez vous vraiment supprimer cette classe?' }
+					= link_to "Suppr.", class_path(c), :method => :delete, data: { confirm: 'Voulez vous vraiment supprimer cette classe?' }
 
 
-= button_to "Créer une nouvelle classes", classes_new_path, :method => :get
-
-=button_to "Supprimer", classes_index_path, :method => :get
+= button_to "Créer une nouvelle classe", new_class_path, :method => :get
