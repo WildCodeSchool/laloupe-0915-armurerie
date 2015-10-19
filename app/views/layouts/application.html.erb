@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<%= button_to "Home" %>
+<%= button_to "Home", root_path, :method => :get %>
 <%= button_to "Aventuriers", users_path, :method => :get %>
 <%= button_to "Classes", classes_path, :method => :get %>
 <%= button_to "Equipements", equipments_path, :method => :get %>
