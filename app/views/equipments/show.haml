@@ -1,0 +1,10 @@
+%h1= @equipment.name
+
+%p= "Item: #{@equipment.item}"
+%p= "Emplacement: #{@equipment.location}"
+%p= "Matiére: #{@equipment.material}"
+%p= "Niveau: #{@equipment.level}"
+%p= "Bonus: #{@equipment.bonus}"
+%p= "Prix: #{@equipment.price}"
+
+= button_to "Retour", equipments_path, :method => :get
