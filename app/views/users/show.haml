@@ -2,5 +2,10 @@
 
 %p= "Niveau: #{@user.level}"
 %p= "Butin: #{@user.loot}"
+%br
+%h4 Mon historique d'achats
+- @user.baskets.each do |basket|
+	%p
+		= basket.updated_at.strftime("%d %b %Y")
 
 = button_to "Retour", users_path, :method => :get
