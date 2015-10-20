@@ -1,0 +1,6 @@
+%h1= @user.nickname
+
+%p= "Niveau: #{@user.level}"
+%p= "Butin: #{@user.loot}"
+
+= button_to "Retour", users_path, :method => :get

@@ -15,6 +15,9 @@
 					= c.name
 
 				%td
+					= link_to "Voir.", class_path(c), :method => :get
+
+				%td
 					= link_to "Modif.", edit_class_path(c), :method => :get
 
 				%td
