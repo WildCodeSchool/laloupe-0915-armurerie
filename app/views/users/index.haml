@@ -20,6 +20,8 @@
 				%td
 					= u.loot
 				%td
+					= link_to "Voir.", user_path(u), :method => :get
+				%td
 					= link_to "Modif.", edit_user_path(u), :method => :get
 				%td
 					= link_to "Suppr.", user_path(u), :method => :delete, data: { confirm: 'Voulez vous vraiment supprimer l\'aventurier ?' }

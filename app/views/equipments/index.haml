@@ -36,6 +36,8 @@
 				%td
 					= e.bonus
 				%td
+					= link_to "Voir.", equipment_path(e), :method => :get
+				%td
 					= link_to "Modif.", edit_equipment_path(e), :method => :get
 				%td
 					= link_to "Suppr.", equipment_path(e), :method => :delete, data: { confirm: 'Voulez vous vraiment supprimer l\'élément ?' }

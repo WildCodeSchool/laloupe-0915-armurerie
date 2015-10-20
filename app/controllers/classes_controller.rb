@@ -4,6 +4,10 @@ class ClassesController < ApplicationController
 		@classes = Classe.all
 	end
 
+	def show
+		@classe = Classe.find(params[:id])
+	end
+
 	def new
 		@classe = Classe.new
 	end
