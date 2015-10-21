@@ -15,7 +15,7 @@ class ClassesController < ApplicationController
 	def create
 		@classe = Classe.new(classe_param)
 		if @classe.save
-			redirect_to classes_path
+			redirect_to classes_path, notice: "La classe \"#{@classe.name}\" a été ajoutée avec succés"
 		else
 			render 'new'
 		end
@@ -27,9 +27,13 @@ class ClassesController < ApplicationController
 
 	def update
 		@classe = Classe.find(params[:id])
-
+		oldname = @classe.name
 		if @classe.update(classe_param)
-			redirect_to classes_path
+			if @classe.name == oldname
+				redirect_to classes_path, notice: "#{@classe.name} a été modifié avec succés"
+			else
+				redirect_to classes_path, notice: "#{oldname} a été modifié en #{@classe.name} avec succés"
+			end
 		else
 			render 'edit'
 		end
@@ -39,8 +43,9 @@ class ClassesController < ApplicationController
 		@classe = Classe.find(params[:id])
 		@classe.destroy
 
-		redirect_to classes_path
+		redirect_to classes_path, notice: "La classe \"#{@classe.name}\" a été supprimée avec succés"
 	end
+	
 
 	private
 

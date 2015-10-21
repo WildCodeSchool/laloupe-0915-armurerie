@@ -1,8 +1,13 @@
 %h1 Ajout d'une classe
-
 = form_for(@classe) do |f|
+	- if @classe.errors.any?
+		%ul
+		- @classe.errors.each do |a, message|
+			%li.warning= message
+	
 	= f.label 'Nom de classe :'
 	= f.text_field :name
 	= f.submit 'Ajouter'
+
 
 = button_to "Retour", classes_path, :method => :get

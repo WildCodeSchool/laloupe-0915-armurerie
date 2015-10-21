@@ -1,6 +1,11 @@
 %h1 Modification de l'aventurier #{@user.nickname} :
 
 = form_for(@user) do |f|
+	- if @user.errors.any?
+		%ul
+		- @user.errors.each do |a, message|
+			%li.warning= message
+
 	= f.label 'Aventurier :'
 	= f.text_field :nickname
 	= f.label 'Niveau :'
