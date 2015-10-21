@@ -1,5 +1,9 @@
 %h1 Bonjour Aventurier ! Que recherchez-vous?
 
-%ul.what
-	%li= link_to 'Chercher un aventurier !'
-	%li= link_to 'Aller à la boutique !'
+= form_tag equipments_path, methode: 'get' do
+	= hidden_field_tag :name, params[:name]
+	= hidden_field_tag :item, params[:item]
+	= hidden_field_tag :location, params[:location]
+	= hidden_field_tag :material, params[:material]
+	= hidden_field_tag :price, params[:price]
+	= hidden_field_tag :level, params[:level]
