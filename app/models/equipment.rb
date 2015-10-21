@@ -1,5 +1,6 @@
 class Equipment < ActiveRecord::Base
 	has_many :classes
+	has_and_belongs_to_many :orders
 
 	validates_presence_of :name, message: "Le nom ne doit pas être vide"
 	validates_presence_of :item, message: "L'item ne doit pas être vide"

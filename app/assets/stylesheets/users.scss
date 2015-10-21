@@ -2,16 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.warning {
+.warning
+{
 	width: auto;
 	padding-left: 5px;
   color: red;
   background-color: #FFEBEE;
 }
 
-#notice {
+#notice
+{
 	width: auto;
 	text-align: center;
   color: green;
   background-color: #C5E1A5;
+
+.order
+{
+	padding-left: 20px;
 }
