@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+.inline
+{
+	display: inline-block;
+}
+
+.right
+{
+	float: right;
+}
+
+.middle
+{
+	vertical-align: middle;
+}
+
+.what
+{
+	width: 300px;
+}
+
+.buttonGo
+{
+	width: 100px;
+}
