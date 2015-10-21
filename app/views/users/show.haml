@@ -3,9 +3,15 @@
 %p= "Niveau: #{@user.level}"
 %p= "Butin: #{@user.loot}"
 %br
-%h4 Mon historique d'achats
-- @user.baskets.each do |basket|
-	%p
-		= basket.updated_at.strftime("%d %b %Y")
+- if @user.baskets.any?
+	%h4 Historique d'achats
+	- @user.baskets.each do |basket|
+		%p
+			= basket.updated_at.strftime("%d %b %Y")
+			%ul
+			- basket.orders.each do |order|
+				%li.order
+					= order.equipment.name
+					= "(quantité: #{order.quantity})"
 
 = button_to "Retour", users_path, :method => :get

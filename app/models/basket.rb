@@ -1,4 +1,4 @@
 class Basket < ActiveRecord::Base
-	has_many :equipments
+	has_many :orders
 	belongs_to :user
 end
