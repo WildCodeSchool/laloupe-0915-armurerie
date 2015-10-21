@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all
+		
 	end
 
 	def show
@@ -14,8 +15,9 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_param)
+		@user.nickname = @user.nickname.capitalize
 		if @user.save
-			redirect_to users_path
+			redirect_to users_path, notice: "\"#{@user.nickname}\" a été ajouté(e) avec succés"
 		else
 			render 'new'
 		end
@@ -27,9 +29,13 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-
+		oldname = @user.nickname
 		if @user.update(user_param)
-			redirect_to users_path
+			if @user.nickname == oldname
+				redirect_to users_path, notice: "#{@user.nickname} a été modifié avec succés"
+			else
+				redirect_to users_path, notice: "#{oldname} a été modifié en #{@user.nickname} avec succés"
+			end
 		else
 			render 'edit'
 		end
@@ -39,7 +45,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@user.destroy
 		
-		redirect_to users_path
+		redirect_to users_path, notice: " \"#{@user.nickname}\" a été supprimé(e) avec succés"
 	end
 
 	private

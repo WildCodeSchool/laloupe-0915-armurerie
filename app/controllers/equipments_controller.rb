@@ -15,7 +15,7 @@ class EquipmentsController < ApplicationController
 	def create
 		@equipment = Equipment.new(equipment_param)
 		if @equipment.save
-			redirect_to equipments_path
+			redirect_to equipments_path, notice: "\"#{@equipment.name}\" a été ajouté(e) avec succés"
 		else
 			render 'new'
 		end
@@ -28,9 +28,13 @@ class EquipmentsController < ApplicationController
 
 	def update
 		@equipment = Equipment.find(params[:id])
-
+		oldname = @equipment.name
 		if @equipment.update(equipment_param)
-			redirect_to equipments_path
+			if @equipment.name == oldname
+				redirect_to equipments_path, notice: "#{@equipment.name} a été modifié avec succés"
+			else
+				redirect_to equipments_path, notice: "#{oldname} a été modifié en #{@equipment.name} avec succés"
+			end
 		else
 			render 'edit'
 		end
@@ -40,7 +44,7 @@ class EquipmentsController < ApplicationController
 		@equipment = Equipment.find(params[:id])
 		@equipment.destroy
 
-		redirect_to equipments_path
+		redirect_to equipments_path, notice: "\"#{@equipment.name}\" a été supprimé(e) avec succés"
 	end
 
 

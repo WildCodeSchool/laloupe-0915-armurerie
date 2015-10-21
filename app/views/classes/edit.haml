@@ -1,6 +1,11 @@
 %h1 Modification de la classe #{@classe.name} :
 
 = form_for(@classe) do |f|
+	- if @classe.errors.any?
+		%ul
+		- @classe.errors.each do |a, message|
+			%li.warning= message
+	
 	= f.label 'Classe :'
 	= f.text_field :name
 	= f.submit 'Modifier'
