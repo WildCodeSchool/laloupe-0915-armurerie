@@ -7,6 +7,7 @@ class HomepagesController < ApplicationController
 	def search
 		sql = "SELECT * FROM equipment WHERE "
 		where = ""
+
 		if params[:name] != ""
 			where += "name LIKE '%" + params[:name] + "%' AND "
 		end
@@ -20,11 +21,30 @@ class HomepagesController < ApplicationController
 		else
 			sql = sql.first(sql.length - 7)
 		end
-		# binding.pry
+		
 		@equipments = Equipment.find_by_sql(sql)
 
-		# @equipments = Equipment.select{|equ| equ.name.include?(params[:name])}
 		render 'index'
+	end
+
+	# Action click on the button "buy"
+	def addBasket
+		# si pas de panier -> création d'un panier
+		basket = Basket.new(user_id: current_user.id)
+		# binding.pry
+		if basket.save
+			# ajout de l'article au panier
+			# binding.pry
+			order = Order.new(basket_id: basket.id, equipment_id: params[:id])
+			if order.save
+				redirect_to baskets_path, :method => :get
+			else
+				render 'homepages#index'
+			end
+		else
+			# binding.pry
+			render 'homepages#index'
+		end
 	end
 
 end

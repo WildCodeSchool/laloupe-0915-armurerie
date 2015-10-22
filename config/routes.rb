@@ -8,10 +8,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  resources :users
-  resources :classes
   post '/equipments' => 'equipments#create', as: :equipment_index # POURQUOI ????
-  resources :equipments
+  post '/homepages/addBasket/:id' => 'homepages#addBasket', as: :addBasket
+  resources :users, :classes, :equipments, :baskets  
 
   get '/search' => 'homepages#search'
   
