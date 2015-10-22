@@ -1,17 +1,22 @@
 %h1= @user.nickname
 
-%p= "Niveau: #{@user.level}"
-%p= "Butin: #{@user.loot}"
-%br
+.panel.panel-primary
+	.panel-heading Informations générales
+	.panel-body
+		%p= "Niveau: #{@user.level}"
+		%p= "Butin: #{@user.loot}"
+
 - if @user.baskets.any?
-	%h4 Historique d'achats
-	- @user.baskets.each do |basket|
-		%p
-			= basket.updated_at.strftime("%d %b %Y")
-			%ul
-			- basket.orders.each do |order|
-				%li.order
-					= order.equipment.name
-					= "(quantité: #{order.quantity})"
+	.panel.panel-info
+		.panel-heading Historique d'achats
+		.panel-body
+			- @user.baskets.each do |basket|
+				%p
+					= basket.updated_at.strftime("%d %b %Y")
+					%ul
+					- basket.orders.each do |order|
+						%li.order
+							= order.equipment.name
+							= "(quantité: #{order.quantity})"
 
 = button_to "Retour", users_path, :method => :get

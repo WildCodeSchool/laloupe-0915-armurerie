@@ -30,7 +30,7 @@ class HomepagesController < ApplicationController
 	# Action click on the button "buy"
 	def addBasket
 		# si pas de panier -> création d'un panier
-		basket = Basket.new(user_id: 1)
+		basket = Basket.new(user_id: current_user.id)
 		# binding.pry
 		if basket.save
 			# ajout de l'article au panier
