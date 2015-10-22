@@ -2,12 +2,20 @@
 
 %br
 
+/ = form_tag("/search", method: "get") do
+/ 	.input-group
+/ 		%span#basic-addon1.input-group-addon Nom
+/ 		%input.form-control{"aria-describedby" => "basic-addon1", :type => "text"}
+/ 		%span#basic-addon1.input-group-addon Item
+/ 		%input.form-control{"aria-describedby" => "basic-addon1", :type => "text"}
+/ 		%button.btn.btn-default{:type => "button"} Rechercher
+
 = form_tag("/search", method: "get") do
 	= label_tag(:name, "Nom:")
 	= text_field_tag(:name)
 	= label_tag(:item, "Item:")
 	= text_field_tag(:item)
-	= submit_tag("Rechercher")
+	= submit_tag "Rechercher", :class => 'btn'
 
 %br
 
@@ -46,4 +54,4 @@
 				%td
 					= e.bonus
 				%td
-					= button_to "Acheter", addBasket_path(e), :method => :post
+					=link_to 'Acheter', addBasket_path(e), :method => :post, :class => 'badge'

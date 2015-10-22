@@ -1,47 +1,13 @@
-%h1 Equipement
+%h1 Liste des équipements
 
 %p#notice= notice
 
-%table
-	%thead
-		%tr
-			%th
-				Nom
-			%th
-				Item
-			%th
-				Matiere	
-			%th
-				Emplacement
-			%th
-				Prix
-			%th
-				Niveau
-			%th
-				Bonus	
-			%th{:colspan => '2'}
-	%tbody
-		- @equipments.each do |e|
-			%tr
-				%td
-					= e.name
-				%td
-					= e.item
-				%td
-					= e.material
-				%td
-					= e.location
-				%td
-					= e.price
-				%td
-					= e.level
-				%td
-					= e.bonus
-				%td
-					= link_to "Voir.", equipment_path(e), :method => :get
-				%td
-					= link_to "Modif.", edit_equipment_path(e), :method => :get
-				%td
-					= link_to "Suppr.", equipment_path(e), :method => :delete, data: { confirm: 'Voulez vous vraiment supprimer l\'élément ?' }
+%ul.list-group#tableau
+	- @equipments.each do |e|
+		%li.list-group-item
+			=link_to 'suppr', equipment_path(e), :method => :delete, data: { confirm: 'Voulez-vous vraiment supprimer l\'aventurier ?' }, :class => 'badge'
+			=link_to 'modif', edit_equipment_path(e), :method => :get, :class => 'badge'
+			=link_to 'voir', equipment_path(e), :method => :get, :class => 'badge'
+			= e.name
 
-= button_to "Ajouter un élément", new_equipment_path, :method => :get
+= button_to "Ajouter un élément", new_equipment_path, :method => :get, :class => 'btn'

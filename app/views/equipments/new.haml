@@ -20,6 +20,6 @@
 	= f.text_field :level
 	= f.label 'Bonus :'
 	= f.text_field :bonus
-	= f.submit 'Ajouter'
+	= f.submit 'Ajouter', :class => 'btn'
 
-= button_to "Retour", equipments_path, :method => :get
+= button_to "Retour", equipments_path, :method => :get, :class => 'btn'

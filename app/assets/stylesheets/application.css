@@ -42,3 +42,38 @@ td
 {
 	padding-left: 10px;
 }
+
+
+.panel-primary
+{
+	width: 300px;
+	margin-left: 50px;
+}
+
+.panel-body
+{
+	margin-left: 20px;
+}
+
+.panel-info
+{
+	width: 500px;
+	margin-left: 50px;
+}
+
+#tableau
+{
+	width: 300px;
+	margin-left: 50px;
+}
+
+.btn
+{
+	margin-left: 50px;
+}
+
+.input-group
+{
+	width: 500px;
+	margin-left: 50px;
+}

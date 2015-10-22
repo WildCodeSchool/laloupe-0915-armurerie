@@ -7,7 +7,7 @@
 	
 	= f.label 'Nom de classe :'
 	= f.text_field :name
-	= f.submit 'Ajouter'
+	= f.submit 'Ajouter', :class => 'btn'
 
 
-= button_to "Retour", classes_path, :method => :get
+= button_to "Retour", classes_path, :method => :get, :class => 'btn'

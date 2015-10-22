@@ -12,6 +12,6 @@
 	= f.text_field :level
 	= f.label 'Butin :'
 	= f.text_field :loot
-	= f.submit 'Modifier'
+	= f.submit 'Modifier', :class => 'btn'
 
-= button_to "Retour", users_path, :method => :get
+= button_to "Retour", users_path, :method => :get, :class => 'btn'
