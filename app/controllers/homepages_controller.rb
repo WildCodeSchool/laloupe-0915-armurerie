@@ -5,7 +5,9 @@ class HomepagesController < ApplicationController
 	end
 
 	def search
-		@equipments = Equipment.find()
+		@equipments = Equipment.select{|equ| equ.name.include?(params[:name])}
+		render 'index'
+		# binding.pry
 	end
 
 end

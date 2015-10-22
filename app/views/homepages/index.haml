@@ -1,6 +1,13 @@
 %h1 Bonjour Aventurier ! Que recherchez-vous?
 
+%br
 
+= form_tag("/search", method: "get") do
+	= label_tag(:name, "Nom:")
+	= text_field_tag(:name)
+	= submit_tag("Rechercher")
+
+%br
 
 %table
 	%thead

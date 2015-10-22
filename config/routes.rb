@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :classes
   post '/equipments' => 'equipments#create', as: :equipment_index # POURQUOI ????
   resources :equipments
+
+  get '/search' => 'homepages#search'
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
