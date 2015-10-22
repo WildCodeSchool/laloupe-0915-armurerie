@@ -1,1 +1,47 @@
 %h1 Bonjour Aventurier ! Que recherchez-vous?
+
+%br
+
+= form_tag("/search", method: "get") do
+	= label_tag(:name, "Nom:")
+	= text_field_tag(:name)
+	= label_tag(:item, "Item:")
+	= text_field_tag(:item)
+	= submit_tag("Rechercher")
+
+%br
+
+%table
+	%thead
+		%tr
+			%th
+				Nom
+			%th
+				Item
+			%th
+				Matiere	
+			%th
+				Emplacement
+			%th
+				Prix
+			%th
+				Niveau
+			%th
+				Bonus	
+	%tbody
+		- @equipments.each do |e|
+			%tr
+				%td
+					= e.name
+				%td
+					= e.item
+				%td
+					= e.material
+				%td
+					= e.location
+				%td
+					= e.price
+				%td
+					= e.level
+				%td
+					= e.bonus
