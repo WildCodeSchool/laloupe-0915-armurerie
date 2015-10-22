@@ -5,6 +5,8 @@
 = form_tag("/search", method: "get") do
 	= label_tag(:name, "Nom:")
 	= text_field_tag(:name)
+	= label_tag(:item, "Item:")
+	= text_field_tag(:item)
 	= submit_tag("Rechercher")
 
 %br

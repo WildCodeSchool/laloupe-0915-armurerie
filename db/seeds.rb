@@ -37,6 +37,12 @@ equipments = Equipment.create(
 		{name: 'IceStick2', item: 'Stick', location: 'Hand', price:44, level:12, bonus: '', material: 'Wood'},
 		{name: '!! TSCHAK !!2', item: 'Axe', location: '2Hands', price:888, level:100, bonus: 'Bleed', material: 'Dwarf Steel'},
 		{name: 'Fireman2', item: 'Helmet', location: 'Head', price:76, level:29, bonus: '', material: 'Iron'},
+		{name: 'Shadow2', item: 'Cape', location: 'Back', price:104, level:77, bonus: 'Invisibility', material: 'Silk'},
+		{name: 'Excalibur3', item: 'Sword', location: 'Head', price:1000000, level:99, bonus: 'Agility', material: 'Steel'},
+		{name: 'YouShallNotPass2', item: 'Shield', location: 'Arm', price:300, level:66, bonus: 'Protection', material: 'Wood and Iron'},
+		{name: 'IceStick2', item: 'Stick', location: 'Hand', price:44, level:12, bonus: '', material: 'Wood'},
+		{name: '!! TSCHAK !!2', item: 'Axe', location: '2Hands', price:888, level:100, bonus: 'Bleed', material: 'Dwarf Steel'},
+		{name: 'Fireman2', item: 'Helmet', location: 'Head', price:76, level:29, bonus: '', material: 'Iron'},
 		{name: 'Shadow2', item: 'Cape', location: 'Back', price:104, level:77, bonus: 'Invisibility', material: 'Silk'}
 	]
 )
