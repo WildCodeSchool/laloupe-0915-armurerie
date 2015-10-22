@@ -20,7 +20,7 @@ class HomepagesController < ApplicationController
 		else
 			sql = sql.first(sql.length - 7)
 		end
-		binding.pry
+		# binding.pry
 		@equipments = Equipment.find_by_sql(sql)
 
 		# @equipments = Equipment.select{|equ| equ.name.include?(params[:name])}
