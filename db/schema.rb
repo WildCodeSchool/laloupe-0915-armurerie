@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022164444) do
+ActiveRecord::Schema.define(version: 20151022155154) do
 
   create_table "baskets", force: :cascade do |t|
     t.integer  "user_id"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20151022164444) do
   add_index "orders", ["equipment_id"], name: "index_orders_on_equipment_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "nickname"
+    t.string   "nickname",                            null: false
     t.integer  "level",                  default: 1
     t.integer  "loot",                   default: 0
     t.datetime "created_at",                          null: false
