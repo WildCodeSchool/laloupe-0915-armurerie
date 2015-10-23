@@ -18,7 +18,7 @@
 		          <li><%= link_to "Classes", classes_path %></li>
 		          <li><%= link_to "Equipements", equipments_path %></li>
 		        </ul>
-		        <ul class="nav navbar-nav">
+		        <ul class="nav navbar-nav navbar-right">
 		        	<% if current_user %>
 		        		<li><%= "Bonjour #{current_user.nickname} !" %></li>
 		        		<li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>

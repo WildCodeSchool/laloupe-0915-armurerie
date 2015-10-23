@@ -2,32 +2,12 @@
 
 %p#notice= notice
 
-%table
-	%thead
-		%tr
-			%th
-				Nom des aventuriers
-			%th
-				Niveau
-			%th
-				Butin
-			%th{:colspan => '2'}
-	%tbody
-		- @users.each do |u|
-			%tr
-				%td
-					= u.nickname
-				%td
-					= u.level
-				%td
-					= u.loot
-				%td
-					= link_to "Voir.", user_path(u), :method => :get
-				%td
-					= link_to "Modif.", edit_user_path(u), :method => :get
-				%td
-					= link_to "Suppr.", user_path(u), :method => :delete, data: { confirm: 'Voulez vous vraiment supprimer l\'aventurier ?' }
+%ul.list-group#tableau
+	- @users.each do |u|
+		%li.list-group-item
+			=link_to 'suppr', user_path(u), :method => :delete, data: { confirm: 'Voulez-vous vraiment supprimer l\'aventurier ?' }, :class => 'badge'
+			=link_to 'modif', edit_user_path(u), :method => :get, :class => 'badge'
+			=link_to 'voir', user_path(u), :method => :get, :class => 'badge'
+			= u.nickname
 
-= button_to "Ajouter un aventurier", new_user_path, :method => :get
-
-
+= button_to "Ajouter un aventurier", new_user_path, :method => :get, :class => 'btn'

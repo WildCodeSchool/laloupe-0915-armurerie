@@ -2,28 +2,12 @@
 
 %p#notice= notice
 
-%table
-	%thead
-		%tr
-			%th
-				Nom des classes
-			
-			%th{:colspan => '2'}
+%ul.list-group#tableau
+	- @classes.each do |c|
+		%li.list-group-item
+			=link_to 'suppr', class_path(c), :method => :delete, data: { confirm: 'Voulez-vous vraiment supprimer l\'aventurier ?' }, :class => 'badge'
+			=link_to 'modif', edit_class_path(c), :method => :get, :class => 'badge'
+			=link_to 'voir', class_path(c), :method => :get, :class => 'badge'
+			= c.name
 
-	%tbody
-		- @classes.each do |c|
-			%tr
-				%td
-					= c.name
-
-				%td
-					= link_to "Voir.", class_path(c), :method => :get
-
-				%td
-					= link_to "Modif.", edit_class_path(c), :method => :get
-
-				%td
-					= link_to "Suppr.", class_path(c), :method => :delete, data: { confirm: 'Voulez vous vraiment supprimer cette classe?' }
-
-
-= button_to "Créer une nouvelle classe", new_class_path, :method => :get
+= button_to "Créer une nouvelle classe", new_class_path, :method => :get, :class => 'btn'
