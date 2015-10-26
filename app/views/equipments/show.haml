@@ -9,5 +9,6 @@
 		%p= "Niveau: #{@equipment.level}"
 		%p= "Bonus: #{@equipment.bonus}"
 		%p= "Prix: #{@equipment.price}"
+		%p= @classes
 
 = button_to "Retour", equipments_path, :method => :get, :class => 'btn'

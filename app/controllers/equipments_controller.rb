@@ -6,6 +6,10 @@ class EquipmentsController < ApplicationController
 
 	def show
 		@equipment = Equipment.find(params[:id])
+		@classes = "Classe(s): "
+		@equipment.classes.each do |classe|
+			@classes += classe.name + ", "
+		end
 	end
 
 	def new

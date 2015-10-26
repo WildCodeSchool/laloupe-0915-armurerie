@@ -1,5 +1,5 @@
 class Equipment < ActiveRecord::Base
-	has_many :classes
+	has_many :equip_classes
 	has_and_belongs_to_many :orders
 
 	validates_presence_of :name, message: "Le nom ne doit pas être vide"
