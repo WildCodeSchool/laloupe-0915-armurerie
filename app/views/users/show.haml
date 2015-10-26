@@ -5,6 +5,7 @@
 	.panel-body
 		%p= "Niveau: #{@user.level}"
 		%p= "Butin: #{@user.loot}"
+		%p= "Classe: #{@user.classe.name}"
 
 - if @user.baskets.any?
 	.panel.panel-info

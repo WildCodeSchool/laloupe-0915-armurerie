@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	has_many :baskets
+	belongs_to :classe
 
 	validates_presence_of :nickname, message: "Le nom ne doit pas être vide"
 	# validates_presence_of :level, message: "Le niveau ne doit pas être vide"
