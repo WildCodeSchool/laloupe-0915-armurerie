@@ -47,23 +47,23 @@ users = User.create(
 
 equipments = Equipment.create(
 	[
-		{name: 'Excalibur', item: 'Sword', location: '2Hands', price:1000000, level:99, bonus: 'Agility', material: 'Steel'},
-		{name: 'YouShallNotPass', item: 'Shield', location: 'Arm', price:300, level:66, bonus: 'Protection', material: 'Wood and Iron'},
-		{name: 'IceStick', item: 'Stick', location: 'Hand', price:44, level:12, bonus: '', material: 'Wood'},
-		{name: '!! TSCHAK !!', item: 'Axe', location: '2Hands', price:888, level:100, bonus: 'Bleed', material: 'Dwarf Steel'},
-		{name: 'Fireman', item: 'Helmet', location: 'Head', price:76, level:29, bonus: '', material: 'Iron'},
-		{name: 'Shadow', item: 'Cape', location: 'Back', price:104, level:77, bonus: 'Invisibility', material: 'Silk'},
-		{name: 'Excalibur2', item: 'Sword', location: '2Hands', price:1000000, level:99, bonus: 'Agility', material: 'Steel'},
-		{name: 'YouShallNotPass2', item: 'Shield', location: 'Arm', price:300, level:66, bonus: 'Protection', material: 'Wood and Iron'},
-		{name: 'IceStick2', item: 'Stick', location: 'Hand', price:44, level:12, bonus: '', material: 'Wood'},
-		{name: '!! TSCHAK !!2', item: 'Axe', location: '2Hands', price:888, level:100, bonus: 'Bleed', material: 'Dwarf Steel'},
-		{name: 'Fireman2', item: 'Helmet', location: 'Head', price:76, level:29, bonus: '', material: 'Iron'},
-		{name: 'Shadow2', item: 'Cape', location: 'Back', price:104, level:77, bonus: 'Invisibility', material: 'Silk'},
-		{name: 'Excalibur3', item: 'Sword', location: 'Head', price:1000000, level:99, bonus: 'Agility', material: 'Steel'},
-		{name: 'YouShallNotPass2', item: 'Shield', location: 'Arm', price:300, level:66, bonus: 'Protection', material: 'Wood and Iron'},
-		{name: 'IceStick2', item: 'Stick', location: 'Hand', price:44, level:12, bonus: '', material: 'Wood'},
-		{name: '!! TSCHAK !!2', item: 'Axe', location: '2Hands', price:888, level:100, bonus: 'Bleed', material: 'Dwarf Steel'},
-		{name: 'Fireman2', item: 'Helmet', location: 'Head', price:76, level:29, bonus: '', material: 'Iron'},
-		{name: 'Shadow2', item: 'Cape', location: 'Back', price:104, level:77, bonus: 'Invisibility', material: 'Silk'}
+		{name: 'Excalibur', item: 'Epée', location: '2 mains', price:1000000, level:99, bonus: 'Agilité', material: 'Acier'},
+		{name: 'YouShallNotPass', item: 'Bouclier', location: 'Bras', price:300, level:66, bonus: 'Protection', material: 'Bois'},
+		{name: 'IceBâton', item: 'Bâton', location: 'Une main', price:44, level:12, bonus: '', material: 'Bois'},
+		{name: '!! TSCHAK !!', item: 'Hache', location: '2 mains', price:888, level:100, bonus: 'Hémorragie', material: 'Acier de Nains'},
+		{name: 'Fireman', item: 'Casque', location: 'Tête', price:76, level:29, bonus: '', material: 'Fer'},
+		{name: 'Shadow', item: 'Cape', location: 'Dos', price:104, level:77, bonus: 'Invisibilité', material: 'Soie'},
+		{name: 'Excalibur2', item: 'Epée', location: '2 mains', price:1000000, level:99, bonus: 'Agilité', material: 'Acier'},
+		{name: 'YouShallNotPass2', item: 'Bouclier', location: 'Bras', price:300, level:66, bonus: 'Protection', material: 'Bois'},
+		{name: 'IceBâton2', item: 'Bâton', location: 'Une main', price:44, level:12, bonus: '', material: 'Bois'},
+		{name: '!! TSCHAK !!2', item: 'Hache', location: '2 mains', price:888, level:100, bonus: 'Hémorragie', material: 'Acier de Nains'},
+		{name: 'Fireman2', item: 'Casque', location: 'Tête', price:76, level:29, bonus: '', material: 'Fer'},
+		{name: 'Shadow2', item: 'Cape', location: 'Dos', price:104, level:77, bonus: 'Invisibilité', material: 'Soie'},
+		{name: 'Excalibur3', item: 'Epée', location: 'Tête', price:1000000, level:99, bonus: 'Agilité', material: 'Acier'},
+		{name: 'YouShallNotPass2', item: 'Bouclier', location: 'Bras', price:300, level:66, bonus: 'Protection', material: 'Bois'},
+		{name: 'IceBâton2', item: 'Bâton', location: 'Une main', price:44, level:12, bonus: '', material: 'Bois'},
+		{name: '!! TSCHAK !!2', item: 'Hache', location: '2 mains', price:888, level:100, bonus: 'Hémorragie', material: 'Acier de Nains'},
+		{name: 'Fireman2', item: 'Casque', location: 'Tête', price:76, level:29, bonus: '', material: 'Fer'},
+		{name: 'Shadow2', item: 'Cape', location: 'Dos', price:104, level:77, bonus: 'Invisibilité', material: 'Soie'}
 	]
 )
