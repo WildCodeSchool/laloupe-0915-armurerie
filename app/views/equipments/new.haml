@@ -23,3 +23,6 @@
 	= f.submit 'Ajouter', :class => 'btn'
 
 = button_to "Retour", equipments_path, :method => :get, :class => 'btn'
+
+
+-#= f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true

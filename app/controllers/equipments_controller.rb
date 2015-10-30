@@ -10,6 +10,7 @@ class EquipmentsController < ApplicationController
 
 	def new
 		@equipment = Equipment.new
+		@materials = Material.all
 	end
 
 	def create

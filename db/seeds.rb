@@ -15,6 +15,16 @@ classes = Classe.create(
 	]
 )
 
+materials = Material.create(
+	[
+		{ name: "Tissu"},
+		{ name: "Cuir"},
+		{ name: "Acier de nain"},
+		{ name: "Bois"},
+		{ name: "Fer"}
+	]
+)
+
 users = User.create(
 	[	
 		{ nickname: 'Syyrius', level: 100, loot: 1000000},
